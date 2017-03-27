@@ -24,6 +24,7 @@ import { AppComponent } from './app.component';
 export class AppModule { 
   constructor(ngRedux: NgRedux<IAppState>)
   {
-    ngRedux.configureStore(rootReducer, {});
+    //Pass counter = 0 in state to change when change state in rootReducer of store.ts
+    ngRedux.configureStore(rootReducer, { counter: 0});
   }
 }
