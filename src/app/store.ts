@@ -1,4 +1,4 @@
-export interface IAppStore
+export interface IAppState
 {
 
 }
