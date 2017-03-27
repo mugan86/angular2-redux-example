@@ -5,6 +5,10 @@ export interface IAppState
     counter: number;
 }
 
+export const INITIAL_STATE : IAppState = {
+    counter : 0
+}
+
 //Different states to make actions
 export function rootReducer(state:IAppState, action):IAppState
 {
