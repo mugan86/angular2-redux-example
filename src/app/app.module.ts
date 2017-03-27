@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import {NgRedux, NgReduxModule} from 'ng2-redux';
+import { IAppStore, rootReducer} from './store';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -12,9 +15,15 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    NgReduxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(ngRedux: NgRedux<IAppStore>)
+  {
+    ngRedux.configureStore(rootReducer, {});
+  }
+}
