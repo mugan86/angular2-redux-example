@@ -1,3 +1,4 @@
+import { INCREMENT } from './actions';
 export interface IAppState
 {
     //To use in counter
