@@ -13,7 +13,9 @@ export class AppComponent {
   counter = 0;
 
   constructor(private ngRedux: NgRedux<IAppState>){
-
+    ngRedux.subscribe(() => {
+      console.log(ngRedux.getState());
+    })
   }
   increment() {
     //this.counter++; //Argument mutating
