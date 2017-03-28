@@ -10,11 +10,22 @@ export interface IAppState
     }
 }
 
+export interface ITodoApp
+{
+    id: number;
+    text: string;
+}
+
 export const INITIAL_STATE : IAppState = {
     counter : 0,
     messaging: {
         newMessages: 5
     }
+}
+
+export const INITIAL_STATE_2 : ITodoApp = {
+    id : 1,
+    text: ""
 }
 
 //Different states to make actions
