@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgRedux} from 'ng2-redux';
+import { NgRedux, select/*Add select decorator*/} from 'ng2-redux';
 import { IAppState } from './store';
 import { INCREMENT } from './actions';
 
@@ -10,6 +10,7 @@ import { INCREMENT } from './actions';
 })
 export class AppComponent {
   title = 'app works!';
+  //@select() counter = 0;
   counter = 0;
 
   constructor(private ngRedux: NgRedux<IAppState>){
