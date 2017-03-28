@@ -22,6 +22,7 @@ export function rootReducer(state:Map<string,any>, action):Map<string,any>
 {
     switch(action.type) {
         case INCREMENT: 
+        state.set('isOnline', true);
         //return { counter: state.counter + 1}
         //return Object.assign({}, state, {counter: state.counter + 1, isOnline: true});
         //return tassign( state, {counter: state.counter + 1}); //NOt running correct after import Map immutable
