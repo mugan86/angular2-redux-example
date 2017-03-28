@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgRedux, select/*Add select decorator*/} from 'ng2-redux';
 import { IAppState } from './store';
 import { INCREMENT } from './actions';
+import { Map } from 'immutable';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +11,9 @@ import { INCREMENT } from './actions';
 })
 export class AppComponent {
   title = 'app works!';
-  @select('counter') count;
+  @select(s => s.get('counter')) count; //state.get('counter')
 
-  constructor(private ngRedux: NgRedux<IAppState>){}
+  constructor(private ngRedux: NgRedux<Map<string,any>>){}
 
   increment() {
     //this.counter++; //Argument mutating
