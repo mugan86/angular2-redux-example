@@ -1,6 +1,6 @@
 import { Map } from 'immutable';
 import {tassign} from 'tassign';
-import { INCREMENT, DECREMENT, RESET } from './actions';
+import { INCREMENT, DECREMENT, RESET, DUPLICATE, HALF } from './actions';
 export interface IAppState
 {
     //To use in counter
@@ -32,9 +32,15 @@ export function rootReducer(state:Map<string,any>, action):Map<string,any>
         case DECREMENT:
             state.set('isOnline', true);
             return state.set('counter', state.get('counter') - 1);
-         case RESET: 
+        case RESET: 
             state.set('isOnline', true);
             return state.set('counter', 0);
+        case DUPLICATE: 
+            state.set('isOnline', true);
+            return state.set('counter', state.get('counter') * 2);
+        case HALF: 
+            state.set('isOnline', true);
+            return state.set('counter', state.get('counter') / 2);
     }
     return state;
 }
