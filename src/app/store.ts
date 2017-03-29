@@ -1,6 +1,6 @@
 import { Map } from 'immutable';
 import {tassign} from 'tassign';
-import { INCREMENT, DECREMENT } from './actions';
+import { INCREMENT, DECREMENT, RESET } from './actions';
 export interface IAppState
 {
     //To use in counter
@@ -10,22 +10,13 @@ export interface IAppState
     }
 }
 
-export interface ITodoApp
-{
-    id: number;
-    text: string;
-}
+
 
 export const INITIAL_STATE : IAppState = {
     counter : 0,
     messaging: {
         newMessages: 5
     }
-}
-
-export const INITIAL_STATE_2 : ITodoApp = {
-    id : 1,
-    text: ""
 }
 
 //Different states to make actions
@@ -41,6 +32,9 @@ export function rootReducer(state:Map<string,any>, action):Map<string,any>
         case DECREMENT:
             state.set('isOnline', true);
             return state.set('counter', state.get('counter') - 1);
+         case RESET: 
+            state.set('isOnline', true);
+            return state.set('counter', 0);
     }
     return state;
 }
