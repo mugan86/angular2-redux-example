@@ -10,8 +10,6 @@ export interface IAppState
     }
 }
 
-
-
 export const INITIAL_STATE : IAppState = {
     counter : 0,
     messaging: {
