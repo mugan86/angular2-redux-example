@@ -89,7 +89,7 @@ export class AppComponent {
     {
       this.decrement();
     }
-    else if (this.code == 'KeyC')
+    else if (this.code == 'KeyC' || this.code == 'F5')
     {
       this.reset();
     }
