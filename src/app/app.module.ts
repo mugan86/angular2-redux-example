@@ -5,9 +5,15 @@ import { HttpModule } from '@angular/http';
 
 import {NgRedux, NgReduxModule} from 'ng2-redux';
 
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/store';
+
 import { fromJS, Map } from 'immutable';
 
 import { IAppState, rootReducer, INITIAL_STATE} from './store';
+
+//Reducers
+import { campaigns } from './../reducers/campaign.reducer';
 
 import { AppComponent } from './app.component';
 import { CampaignComponent } from './campaign/campaign.component';
@@ -21,7 +27,11 @@ import { CampaignComponent } from './campaign/campaign.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    NgReduxModule
+    NgReduxModule,
+    StoreModule.provideStore({
+      campaigns
+    }),
+    StoreDevtoolsModule.instrumentOnlyWithExtension()
   ],
   providers: [],
   bootstrap: [AppComponent]
