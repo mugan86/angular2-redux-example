@@ -12,9 +12,6 @@ import { fromJS, Map } from 'immutable';
 
 import { IAppState, rootReducer, INITIAL_STATE} from './store';
 
-//Reducers
-import { campaigns } from './../reducers/campaign.reducer';
-
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -25,11 +22,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    NgReduxModule,
-    StoreModule.provideStore({
-      campaigns
-    }),
-    StoreDevtoolsModule.instrumentOnlyWithExtension()
+    NgReduxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
