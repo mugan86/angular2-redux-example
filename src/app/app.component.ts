@@ -89,5 +89,9 @@ export class AppComponent {
     {
       this.decrement();
     }
+    else if (this.code == 'KeyC')
+    {
+      this.reset();
+    }
   }
 }
