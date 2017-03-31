@@ -7,13 +7,15 @@ import {NgRedux, NgReduxModule} from 'ng2-redux';
 
 import { fromJS, Map } from 'immutable';
 
-import { AppComponent } from './app.component';
-
 import { IAppState, rootReducer, INITIAL_STATE} from './store';
+
+import { AppComponent } from './app.component';
+import { CampaignComponent } from './campaign/campaign.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CampaignComponent
   ],
   imports: [
     BrowserModule,
