@@ -16,12 +16,10 @@ import { IAppState, rootReducer, INITIAL_STATE} from './store';
 import { campaigns } from './../reducers/campaign.reducer';
 
 import { AppComponent } from './app.component';
-import { CampaignComponent } from './campaign/campaign.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CampaignComponent
   ],
   imports: [
     BrowserModule,

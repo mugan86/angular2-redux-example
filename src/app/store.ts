@@ -1,6 +1,7 @@
 import { Map } from 'immutable';
 import {tassign} from 'tassign';
 import { INCREMENT, DECREMENT, RESET, DUPLICATE, HALF } from './actions';
+
 export interface IAppState
 {
     //To use in counter
