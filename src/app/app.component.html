@@ -6,7 +6,7 @@
     <strong>{{title}} <span class="badge badge-default">New</span></strong> This alert needs your attention, but it's not super important.
   </div>
   <p> Counter: {{ count | async }} </p>
-  <button (click)="increment()">Increment</button>
+  <button type="button" class="btn btn-primary" (click)="increment()">Increment</button>
   <button (click)="decrement()">Decrement</button>
   <button (click)="reset()">Reset</button>
   <button (click)="duplicate()">Duplicate</button>
