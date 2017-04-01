@@ -5,7 +5,21 @@
   <div class="alert alert-info" role="alert">
     <strong>{{title}} <span class="badge badge-default">New</span></strong> This alert needs your attention, but it's not super important.
   </div>
-  <p> Counter: {{ count | async }} </p>
+
+  <div class="card text-center">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-block">
+    <h4 class="card-title">Special title treatment</h4>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+  <div class="card-footer text-muted">
+    Counter: {{ count | async }}
+  </div>
+</div>
+  <p>  </p>
   <button type="button" class="btn btn-primary" (click)="increment()">Increment</button>
   <button type="button" class="btn btn-primary" (click)="decrement()">Decrement</button>
   <button type="button" class="btn btn-secondary" (click)="duplicate()">Duplicate</button>
