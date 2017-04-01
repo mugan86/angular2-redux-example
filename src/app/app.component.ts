@@ -12,7 +12,7 @@ window.focus(); // make sure we are on this page before we start typing
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Angular 2 Redux example with Keyboard events!!';
   @select(s => s.get('counter')) count; //state.get('counter')
 
   constructor(private ngRedux: NgRedux<Map<string,any>>){}
