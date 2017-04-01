@@ -54,12 +54,12 @@ export class AppComponent {
   timeStamp: number;
   type: string;
   which: number;
-  
+
   @HostListener('window:keydown', ['$event'])
   keyboardInput(event: any) {
     event.preventDefault();
     event.stopPropagation();
-    
+
     this.keyboardEvent = event;
     this.altKey = event.altKey;
     this.charCode = event.charCode;
@@ -73,23 +73,23 @@ export class AppComponent {
     this.type = event.type;
     this.which = event.which;
 
-    if (this.code == 'ArrowUp')
+    if (this.code == 'ArrowUp' || this.keyCode == 38)
     {
       this.increment();
     }
-    else if (this.code == 'ArrowRight')
+    else if (this.code == 'ArrowRight' || this.keyCode == 39)
     {
       this.duplicate();
     }
-    else if (this.code == 'ArrowLeft')
+    else if (this.code == 'ArrowLeft' || this.keyCode == 37)
     {
       this.half();
     }
-    else if (this.code == 'ArrowDown')
+    else if (this.code == 'ArrowDown' || this.keyCode == 40)
     {
       this.decrement();
     }
-    else if (this.code == 'KeyC' || this.code == 'F5')
+    else if (this.code == 'KeyC' || this.keyCode == 67)
     {
       this.reset();
     }
