@@ -7,10 +7,10 @@
   </div>
   <p> Counter: {{ count | async }} </p>
   <button type="button" class="btn btn-primary" (click)="increment()">Increment</button>
-  <button (click)="decrement()">Decrement</button>
-  <button (click)="reset()">Reset</button>
+  <button type="button" class="btn btn-primary" (click)="decrement()">Decrement</button>
   <button (click)="duplicate()">Duplicate</button>
   <button (click)="half()">Half value</button>
+  <button type="button" class="btn btn-danger" (click)="reset()">Reset</button>
   <div>
     <h2>Keyboard Event instructions to use in application with KeyDown</h2>
     <ul>
