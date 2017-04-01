@@ -13,18 +13,17 @@
   <div class="card-block">
     <h4 class="card-title">Special title treatment</h4>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <button type="button" class="btn btn-primary" (click)="increment()">Increment</button>
+    <button type="button" class="btn btn-primary" (click)="decrement()">Decrement</button>
+    <button type="button" class="btn btn-secondary" (click)="duplicate()">Duplicate</button>
+    <button type="button" class="btn btn-secondary" (click)="half()">Half value</button>
+    <button type="button" class="btn btn-danger" (click)="reset()">Reset</button>
   </div>
   <div class="card-footer text-muted">
     Counter: {{ count | async }}
   </div>
 </div>
-  <p>  </p>
-  <button type="button" class="btn btn-primary" (click)="increment()">Increment</button>
-  <button type="button" class="btn btn-primary" (click)="decrement()">Decrement</button>
-  <button type="button" class="btn btn-secondary" (click)="duplicate()">Duplicate</button>
-  <button type="button" class="btn btn-secondary" (click)="half()">Half value</button>
-  <button type="button" class="btn btn-danger" (click)="reset()">Reset</button>
+
   <div>
     <h2>Keyboard Event instructions to use in application with KeyDown</h2>
     <ul>
