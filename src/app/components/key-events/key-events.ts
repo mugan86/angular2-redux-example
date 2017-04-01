@@ -6,7 +6,7 @@ window.focus(); // make sure we are on this page before we start typing
   selector: 'key-events',
   templateUrl: './key-events.html'
 })
-export class KeyboardEvents {
+export class KeyEvents {
   title = 'app works!';
 
 
