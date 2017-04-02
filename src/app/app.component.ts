@@ -12,33 +12,37 @@ window.focus(); // make sure we are on this page before we start typing
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  valueZero: boolean = false;
   title = 'Angular 2 Redux example with Keyboard events!!';
   @select(s => s.get('counter')) count; //state.get('counter')
 
   constructor(private ngRedux: NgRedux<Map<string,any>>){}
 
   increment() {
-    //this.counter++; //Argument mutating
+    this.valueZero = false;
     this.ngRedux.dispatch({type: INCREMENT});
   }
 
   decrement() {
+    this.valueZero = false;
     this.ngRedux.dispatch({type: DECREMENT})
   }
 
   reset() {
+    this.valueZero = false;
     //this.counter++; //Argument mutating
     this.ngRedux.dispatch({type: RESET});
   }
 
   duplicate() {
-    //this.counter++; //Argument mutating
-    this.ngRedux.dispatch({type: DUPLICATE});
+    console.log(this.count);
+    if (this.count != 0) this.ngRedux.dispatch({type: DUPLICATE});
+    else this.valueZero = true;
   }
 
   half() {
-    //this.counter++; //Argument mutating
-    this.ngRedux.dispatch({type: HALF});
+    if (this.count != 0) this.ngRedux.dispatch({type: HALF});
+    else this.valueZero = true;
   }
 
   /* a few examples */
