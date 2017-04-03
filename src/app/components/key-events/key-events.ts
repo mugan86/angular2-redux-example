@@ -45,16 +45,34 @@ export class KeyEvents {
     this.type = event.type;
     this.which = event.which;
 
-    if (this.code == 'ArrowUp')
+    /*if (this.code == 'ArrowUp' || this.keyCode == 38)
     {
-        alert("Test");
+      this.increment();
     }
+    else if (this.code == 'ArrowRight' || this.keyCode == 39)
+    {
+      this.duplicate();
+    }
+    else if (this.code == 'ArrowLeft' || this.keyCode == 37)
+    {
+      this.half();
+    }
+    else if (this.code == 'ArrowDown' || this.keyCode == 40)
+    {
+      this.decrement();
+    }
+    else if (this.code == 'KeyC' || this.keyCode == 67)
+    {
+      this.reset();
+    }*/
   }
 
   getKeyboardEventCode()
   {
       return this.code;
   }
+
+  
 /*
     if (this.code == 'ArrowUp')
     {
