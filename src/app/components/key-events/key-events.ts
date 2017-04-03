@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Input, Output, EventEmitter  } from '@angular/core';
 
 window.focus(); // make sure we are on this page before we start typing
 
@@ -9,6 +9,12 @@ window.focus(); // make sure we are on this page before we start typing
 })
 export class KeyEvents {
   title = 'app works!';
+
+  @Input()
+  key: string;
+
+  @Output()
+  change: EventEmitter<String> = new EventEmitter<String>();
 
 
   constructor(){}
@@ -32,7 +38,7 @@ export class KeyEvents {
     event.preventDefault();
     event.stopPropagation();
 
-    console.log(event.altKey);
+    console.log(event.code + " / " + event.keyCode);
     this.keyboardEvent = event;
     this.altKey = event.altKey;
     this.charCode = event.charCode;
