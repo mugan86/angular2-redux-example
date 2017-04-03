@@ -20,7 +20,9 @@ export class AppComponent {
   constructor(private ngRedux: NgRedux<Map<string,any>>){}
 
   keyChange(event) {
+    console.log("Receive event" +  event[0] + " / " + event[1]);
 
+    this.makeActionFromKeyEvent(event[0], event[1]);
   }
 
   increment() {
@@ -51,5 +53,33 @@ export class AppComponent {
     if (this.count != 0) this.ngRedux.dispatch({type: HALF});
     else this.valueZero = true;
   }
+
+  makeActionFromKeyEvent(code , keyCode )
+  {
+    if (code == 'ArrowUp' || keyCode == 38)
+    {
+      this.increment();
+    }
+    else if (code == 'ArrowRight' || keyCode == 39)
+    {
+      this.duplicate();
+    }
+    else if (code == 'ArrowLeft' || keyCode == 37)
+    {
+      this.half();
+    }
+    else if (code == 'ArrowDown' || keyCode == 40)
+    {
+      this.decrement();
+    }
+    else if (code == 'KeyC' || keyCode == 67)
+    {
+      this.reset();
+    }
+  }
+
+
+
+  
 
 }
