@@ -15,6 +15,7 @@ export class AppComponent {
   valueZero: boolean = false;
   title = 'Angular 2 Redux example with Keyboard events!!';
   @select(s => s.get('counter')) count; //state.get('counter')
+  action: string;
 
   constructor(private ngRedux: NgRedux<Map<string,any>>){}
 
@@ -29,13 +30,15 @@ export class AppComponent {
   }
 
   reset() {
-    this.valueZero = false;
+    console.log("Reset");
     //this.counter++; //Argument mutating
     this.ngRedux.dispatch({type: RESET});
+   
   }
 
   duplicate() {
-    console.log(this.count);
+    console.log("Duplicate" +   this.ngRedux);
+    this.action = "duplicate";
     if (this.count != 0) this.ngRedux.dispatch({type: DUPLICATE});
     else this.valueZero = true;
   }
