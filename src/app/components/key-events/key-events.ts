@@ -14,7 +14,7 @@ export class KeyEvents {
   key: string;
 
   @Output()
-  change: EventEmitter<String> = new EventEmitter<String>();
+  selectKey: EventEmitter<String[]> = new EventEmitter<String[]>();
 
 
   constructor(){}
@@ -52,54 +52,9 @@ export class KeyEvents {
     this.type = event.type;
     this.which = event.which;
 
-    /*if (this.code == 'ArrowUp' || this.keyCode == 38)
-    {
-      this.increment();
-    }
-    else if (this.code == 'ArrowRight' || this.keyCode == 39)
-    {
-      this.duplicate();
-    }
-    else if (this.code == 'ArrowLeft' || this.keyCode == 37)
-    {
-      this.half();
-    }
-    else if (this.code == 'ArrowDown' || this.keyCode == 40)
-    {
-      this.decrement();
-    }
-    else if (this.code == 'KeyC' || this.keyCode == 67)
-    {
-      this.reset();
-    }*/
-  }
+    //Add in eventData array before send to return to select main component
+    let eventData = [this.code, String(this.keyCode)];
 
-  getKeyboardEventCode()
-  {
-      return this.code;
+    this.selectKey.emit(eventData);
   }
-
-  
-/*
-    if (this.code == 'ArrowUp')
-    {
-      this.increment();
-    }
-    else if (this.code == 'ArrowRight')
-    {
-      this.duplicate();
-    }
-    else if (this.code == 'ArrowLeft')
-    {
-      this.half();
-    }
-    else if (this.code == 'ArrowDown')
-    {
-      this.decrement();
-    }
-    else if (this.code == 'KeyC' || this.code == 'F5')
-    {
-      this.reset();
-    }
-  }*/
 }
