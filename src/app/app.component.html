@@ -27,6 +27,7 @@
   </div>
 </div>
 <br/>
-<key-events></key-events>
+<key-events [key]="myCount"
+        (change)="countChange($event)"></key-events>
 
 </div>
