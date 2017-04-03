@@ -15,7 +15,7 @@ export class AppComponent {
   valueZero: boolean = false;
   title = 'Angular 2 Redux example with Keyboard events!!';
   @select(s => s.get('counter')) count; //state.get('counter')
-  action: string;
+  action: string = "";
 
   constructor(private ngRedux: NgRedux<Map<string,any>>){}
 
@@ -46,6 +46,12 @@ export class AppComponent {
   half() {
     if (this.count != 0) this.ngRedux.dispatch({type: HALF});
     else this.valueZero = true;
+  }
+
+  onChange(event) {
+    if (this.action === event) return;
+    this.action = event;
+    console.log(this.action);
   }
 
   

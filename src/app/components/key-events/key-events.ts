@@ -2,6 +2,7 @@ import { Component, HostListener } from '@angular/core';
 
 window.focus(); // make sure we are on this page before we start typing
 
+
 @Component({
   selector: 'key-events',
   templateUrl: './key-events.html'
