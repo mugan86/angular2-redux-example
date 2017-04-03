@@ -1,6 +1,6 @@
 {
-  "name": "redux-angular2-rx-jsand-ngrx-store",
-  "version": "0.0.0",
+  "name": "key-events-action-and-redux-example",
+  "version": "0.0.5",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
