@@ -19,6 +19,10 @@ export class AppComponent {
 
   constructor(private ngRedux: NgRedux<Map<string,any>>){}
 
+  keyChange(event) {
+
+  }
+
   increment() {
     this.valueZero = false;
     this.ngRedux.dispatch({type: INCREMENT});
@@ -48,11 +52,4 @@ export class AppComponent {
     else this.valueZero = true;
   }
 
-  onChange(event) {
-    if (this.action === event) return;
-    this.action = event;
-    console.log(this.action);
-  }
-
-  
 }
