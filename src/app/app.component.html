@@ -27,7 +27,9 @@
   </div>
 </div>
 <br/>
+<!-- selectKey define output inside key-events that response to emit result-->
+<!-- keyChange event define inside this template component-->
 <key-events [key]="''"
-        (change)="countChange($event)"></key-events>
+        (selectKey)="keyChange($event)"></key-events>
 
 </div>
