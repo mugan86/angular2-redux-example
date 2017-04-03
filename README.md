@@ -30,3 +30,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## List to show key events codes
 
 https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes
+
+## Tutorial reference to emit event with key events
+
+https://toddmotto.com/component-events-event-emitter-output-angular-2
